@@ -1,0 +1,86 @@
+.promoblock {
+  background-color: #6c2af5;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(https://img.the-village.ru/4RAly1kk0Yn83zqr0B9e52NHONfCFdPJRB7-NbeHSRg/q:88/plain/2022/01/31/bg7.png);
+  .promoblock__container {
+    width: get-vw(955px, 1440);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: get-vw(40px, 1440) auto;
+    .promoblock__container_item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+
+      .promoblock__container_item_container {
+        padding: get-vw(80px, 1440);
+
+        // width: get-vw(1260px, 1440);
+
+        // margin-top: get-vw(90px, 1440);
+        z-index: 1;
+        background-size: cover;
+        position: relative;
+        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/promoblok-block_0.svg);
+        .promoblock__container_item_title {
+          font-weight: 500;
+          color: #6c2af5;
+          font-family: var(--font-alt);
+          font-weight: 500;
+          font-size: get-vw(30px, 1440);
+          line-height: 1.4;
+
+          margin-bottom: get-vw(30px, 1440);
+        }
+        .promoblock__container_item_text {
+          font-weight: 500;
+          color: #6c2af5;
+          font-family: var(--font-alt);
+          font-weight: 500;
+          font-size: get-vw(19px, 1440);
+          line-height: 1.6;
+          margin-bottom: get-vw(50px, 1440);
+        }
+        .promoblock__container_item_btn {
+          width: get-vw(290px, 1440);
+          height: get-vw(62px, 1440);
+          background-color: #6c2af5;
+          border: get-vw(1px, 1440) solid #6c2af5;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 0.5s;
+          a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+
+            font-family: var(--font-alt);
+            font-weight: 500;
+            font-size: get-vw(13px, 1440);
+            text-transform: uppercase;
+            line-height: 1.4;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}

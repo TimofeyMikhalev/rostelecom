@@ -1,0 +1,89 @@
+.promoblock {
+  background-color: #6c2af5;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(https://img.the-village.ru/5v5ByMcb2nJdHc_5V_wzsCGg7sBJt9a3nqQ32DckFow/q:88/plain/2022/02/01/7m.png);
+  .promoblock__container {
+    width: get-vw(294px, 320);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: get-vw(50px, 320) auto;
+    .promoblock__container_item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+
+      height: auto;
+
+      .promoblock__container_item_container {
+        z-index: 1;
+        height: get-vw(1270px, 320);
+        background-size: cover;
+        position: relative;
+        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/02/01/promoblock.svg);
+        .promoblock__container_item_title {
+          font-weight: 500;
+          color: #6c2af5;
+          font-family: var(--font-alt);
+          font-weight: 500;
+          font-size: get-vw(25px, 320);
+          line-height: 1.4;
+
+          margin-bottom: get-vw(30px, 320);
+          padding-top: get-vw(65px, 320);
+          padding-left: get-vw(15px, 320);
+        }
+        .promoblock__container_item_text {
+          font-weight: 500;
+          color: #6c2af5;
+          font-family: var(--font-alt);
+          font-weight: 400;
+          font-size: get-vw(16px, 320);
+          line-height: 1.6;
+          margin-bottom: get-vw(30px, 320);
+          width: get-vw(260px, 320);
+          padding-left: get-vw(15px, 320);
+        }
+        .promoblock__container_item_btn {
+          width: get-vw(260px, 320);
+          height: get-vw(62px, 320);
+          background-color: #6c2af5;
+          border: get-vw(1px, 320) solid #6c2af5;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 0.5s;
+          margin: 0 auto;
+          a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+
+            font-family: var(--font-alt);
+            font-weight: 500;
+            font-size: get-vw(11px, 320);
+            text-transform: uppercase;
+            line-height: 1.4;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}

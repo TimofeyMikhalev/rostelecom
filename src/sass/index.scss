@@ -6,13 +6,12 @@
 
 [data-ui-id='post'] {
   @media (min-width: 649px) {
-    // @import 'start';
+    @import 'start';
     @import 'content';
     @import 'promoblock';
   }
 
   @media (max-width: 650px) {
-    // @import 'mobile/mobile.scss';
     // @import 'mobile/start.scss';
     @import 'mobile/content.scss';
     @import 'mobile/promoblock.scss';

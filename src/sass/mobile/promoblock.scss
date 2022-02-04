@@ -9,7 +9,20 @@
 
   background-size: cover;
   background-attachment: fixed;
-  background-image: url(https://img.the-village.ru/5v5ByMcb2nJdHc_5V_wzsCGg7sBJt9a3nqQ32DckFow/q:88/plain/2022/02/01/7m.png);
+  // background-image: url(https://img.the-village.ru/5v5ByMcb2nJdHc_5V_wzsCGg7sBJt9a3nqQ32DckFow/q:88/plain/2022/02/01/7m.png);
+  .promoblock__img {
+    position: absolute;
+    z-index: -1;
+    background-attachment: fixed;
+
+    width: 100%;
+    height: 100%;
+    // width: get-vw(1440px, 1440);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
   .promoblock__container {
     width: get-vw(294px, 320);
 

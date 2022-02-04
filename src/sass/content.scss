@@ -1,471 +1,490 @@
-.header {
-  background-color: #3a3a3a;
-  display: flex;
-  justify-content: center;
-
-  &__inner {
-    width: get-vw(1030px, 1440);
-    padding-bottom: get-vw(34px, 1440);
-  }
-  &__inner p {
-    font-family: var(--font-alt);
-    font-weight: 400;
-    font-size: get-vw(28px, 1440);
-    line-height: 1.28;
-    color: #e5e5e5;
-
-    a {
-      text-decoration: underline;
-      color: #e5e5e5;
-    }
-  }
-  .container__header {
-    width: 81%;
-    justify-content: flex-start;
-    display: flex;
-  }
-}
-
-.moveline {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+.startContainer {
   align-items: flex-start;
+  justify-content: flex-start;
 
   width: 100%;
+  height: auto;
 
   overflow: hidden;
 
-  .moveline__container {
+  z-index: 2;
+
+  // .header {
+  //     background-color: #3a3a3a;
+  //     display: flex;
+  //     justify-content: center;
+  //     width: get-vw(1440px, 1440);
+  //     &__inner {
+  //         width: get-vw(1030px, 1440);
+  //         padding-bottom: get-vw(34px, 1440);
+  //     }
+  //     &__inner p {
+  //         font-family: var(--font-alt);
+  //         font-weight: 400;
+  //         font-size: get-vw(28px, 1440);
+  //         line-height: 1.28;
+  //         color: #e5e5e5;
+
+  //         a {
+  //         text-decoration: underline;
+  //         color: #e5e5e5;
+  //         }
+  //     }
+  //     .container__header {
+  //         width: 81%;
+  //         justify-content: flex-start;
+  //         display: flex;
+  //     }
+  // }
+
+  .moveline {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
 
-    animation: move 3s linear infinite;
+    width: 100%;
 
-    width: auto;
-    background-color: #6c2af5;
-    color: #3a3a3a;
+    //   overflow: hidden;
 
-    .container__item {
+    .moveline__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      animation: move 3s linear infinite;
+
       width: auto;
-      font-family: var(--font-alt);
+      background-color: #6c2af5;
+      color: #3a3a3a;
 
-      font-weight: 500;
-      font-size: get-vw(20px, 1440);
-      line-height: get-vw(40px, 1440);
-      color: #000;
-      white-space: nowrap;
+      .container__item {
+        width: auto;
+        font-family: var(--font-alt);
 
-      padding: get-vw(10px, 1440) 0;
+        font-weight: 500;
+        font-size: get-vw(20px, 1440);
+        line-height: get-vw(40px, 1440);
+        color: #000;
+        white-space: nowrap;
 
-      span {
-        margin-left: get-vw(20px, 1440);
+        padding: get-vw(10px, 1440) 0;
+
+        span {
+          margin-left: get-vw(20px, 1440);
+        }
+      }
+      .container__item:not(:last-child) {
+        margin-right: get-vw(25px, 1440);
       }
     }
-    .container__item:not(:last-child) {
-      margin-right: get-vw(25px, 1440);
+    .moveline_orange {
+      background-color: #ec5c2f;
     }
   }
-  .moveline_orange {
-    background-color: #ec5c2f;
+
+  .moveline_reverse {
+    .moveline__container {
+      animation: move 3s linear infinite reverse;
+    }
   }
-}
-
-.moveline_reverse {
-  .moveline__container {
-    animation: move 3s linear infinite reverse;
+  @keyframes move {
+    0% {
+      transform: translate(-10%, 0);
+      transform: translate(-9.1%, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
   }
-}
-@keyframes move {
-  0% {
-    transform: translate(-10%, 0);
-    transform: translate(-9.1%, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-}
 
-.content {
-  display: flex;
-  justify-content: center;
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 
-  background-color: #3a3a3a;
-  position: relative;
-  z-index: 3;
+    background-color: #3a3a3a;
+    position: relative;
+    z-index: 3;
 
-  // .content__img{
-  //     position: absolute;
-  //     z-index: -1;
-  //     background-attachment: fixed;
+    .content__img {
+      position: absolute;
+      z-index: -1;
+      background-attachment: fixed;
 
-  //     // width: 100%;
-  //     // height: 100%;
-  //     width: get-vw(1260px, 1440);
-  //     img{
-  //         width: 100%;
-  //         height: 100%;
+      //   width: 100%;
 
-  //     }
-  // }
-  .content__container {
-    .content__container__wrapper {
-      width: get-vw(1260px, 1440);
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .content__container {
+      width: 100%;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      .content__container_inner {
-        display: flex;
-        justify-content: center;
+      .content__container__wrapper {
         width: get-vw(1260px, 1440);
-        height: get-vw(485px, 1440);
-        margin-top: get-vw(90px, 1440);
-        z-index: 1;
-        top: get-vw(50px, 1440);
-
-        background-size: cover;
-        position: relative;
-
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок-1.svg);
-
-        .container_inner_box {
-          padding-top: get-vw(80px, 1440);
-          padding-right: get-vw(80px, 1440);
-          .container_inner_box_title {
-            font-family: var(--font-alt);
-
-            font-weight: 600;
-            font-size: get-vw(13px, 1440);
-            line-height: 1.2;
-            color: #6c2af5;
-            margin-bottom: get-vw(20px, 1440);
-          }
-          .container_inner_box_text {
-            font-family: var(--font-alt);
-
-            font-weight: 600;
-            font-size: get-vw(30px, 1440);
-            line-height: 1.4;
-            color: #6c2af5;
-            // margin-bottom: get-vw(20px, 1440);
-            width: get-vw(431px, 1440);
-
-            // overflow: hidden;
-            // background: linear-gradient(90deg, #000, #fff, #000);
-            // background-repeat: no-repeat;
-            // background-size: 80%;
-            // animation: animate 3s linear infinite;
-            // -webkit-background-clip: text;
-            // -webkit-text-fill-color: rgba(255, 255, 255, 0);
-          }
-          // @keyframes animate {
-          //     0% {
-          //       background-position: -500%;
-          //     }
-          //     100% {
-          //       background-position: 500%;
-          //     }
-          //   }
-        }
-        .container_inner_box2 {
-          padding-top: get-vw(80px, 1440);
-          .container_inner_box2_title {
-            font-family: var(--font-alt);
-
-            font-weight: 600;
-            font-size: get-vw(20px, 1440);
-            line-height: 1.2;
-            color: #6c2af5;
-            margin-bottom: get-vw(10px, 1440);
-          }
-          .container_inner_box2_subtitle {
-            font-family: var(--font-alt);
-
-            font-weight: 400;
-            font-size: get-vw(13px, 1440);
-            line-height: 1.2;
-            color: #6c2af5;
-            margin-bottom: get-vw(30px, 1440);
-          }
-          .container_inner_box2_text {
-            font-family: var(--font-alt);
-
-            font-weight: 400;
-            font-size: get-vw(19px, 1440);
-            line-height: 1.4;
-            color: #6c2af5;
-            // margin-bottom: get-vw(20px, 1440);
-            width: get-vw(640px, 1440);
-            padding-bottom: get-vw(80px, 1440);
-          }
-        }
-      }
-      .content__container_inner2 {
-        display: flex;
-        justify-content: center;
-        width: get-vw(1260px, 1440);
-        height: get-vw(462px, 1440);
-        margin-top: get-vw(90px, 1440);
-        z-index: 1;
-        top: get-vw(50px, 1440);
-        color: #ec5c2f;
-
-        background-size: cover;
-        position: relative;
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок2.svg);
-        .container_inner_box {
-          .container_inner_box_title {
-            color: #ec5c2f;
-          }
-          .container_inner_box_text {
-            color: #ec5c2f;
-          }
-        }
-        .container_inner_box2 {
-          .container_inner_box2_title {
-            color: #ec5c2f;
-          }
-          .container_inner_box2_subtitle {
-            color: #ec5c2f;
-          }
-          .container_inner_box2_text {
-            color: #ec5c2f;
-          }
-        }
-      }
-      .content__container_inner3 {
-        display: flex;
-        justify-content: center;
-        width: get-vw(1260px, 1440);
-        height: get-vw(480px, 1440);
-        margin-top: get-vw(90px, 1440);
-        z-index: 1;
-        top: get-vw(50px, 1440);
-
-        background-size: cover;
-        position: relative;
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок3.svg);
-      }
-      .content__container_inner4 {
-        display: flex;
-        justify-content: center;
-        width: get-vw(1260px, 1440);
-        height: get-vw(434px, 1440);
-        margin-top: get-vw(90px, 1440);
-        z-index: 1;
-        top: get-vw(50px, 1440);
-        color: #ec5c2f;
-
-        background-size: cover;
-        position: relative;
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/subtract.svg);
-        .container_inner_box {
-          .container_inner_box_title {
-            color: #ec5c2f;
-          }
-          .container_inner_box_text {
-            color: #ec5c2f;
-          }
-        }
-        .container_inner_box2 {
-          .container_inner_box2_title {
-            color: #ec5c2f;
-          }
-          .container_inner_box2_subtitle {
-            color: #ec5c2f;
-          }
-          .container_inner_box2_text {
-            color: #ec5c2f;
-          }
-        }
-      }
-      .content__container_inner5 {
-        display: flex;
-        justify-content: center;
-        width: get-vw(1260px, 1440);
-        height: get-vw(574px, 1440);
-        margin-top: get-vw(90px, 1440);
-        z-index: 1;
-        top: get-vw(50px, 1440);
-
-        background-size: cover;
-        position: relative;
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок5.svg);
-        .container_inner_box2 {
-          .container_inner_box2_text {
-            width: get-vw(600px, 1440);
-            padding-right: get-vw(40px, 1440);
-          }
-        }
-      }
-      .content__container_inner6 {
-        display: flex;
-        justify-content: center;
-        width: get-vw(1260px, 1440);
-        height: get-vw(518px, 1440);
-        margin-top: get-vw(90px, 1440);
-        z-index: 1;
-        top: get-vw(50px, 1440);
-        color: #ec5c2f;
-
-        background-size: cover;
-        position: relative;
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок6.svg);
-        .container_inner_box {
-          .container_inner_box_title {
-            color: #ec5c2f;
-          }
-          .container_inner_box_text {
-            color: #ec5c2f;
-          }
-        }
-        .container_inner_box2 {
-          .container_inner_box2_title {
-            color: #ec5c2f;
-          }
-          .container_inner_box2_subtitle {
-            color: #ec5c2f;
-          }
-          .container_inner_box2_text {
-            color: #ec5c2f;
-          }
-        }
-      }
-
-      .content__container_items {
-        width: get-vw(974px, 1440);
-        height: get-vw(730px, 1440);
-
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        .content__container_inner {
+          display: flex;
+          justify-content: center;
+          width: get-vw(1260px, 1440);
+          height: get-vw(485px, 1440);
+          margin-top: get-vw(90px, 1440);
+          z-index: 1;
+          top: get-vw(50px, 1440);
 
-        margin-bottom: get-vw(107px, 1440);
+          background-size: cover;
+          position: relative;
 
-        background-size: cover;
-        position: relative;
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок-1.svg);
 
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок1-2.svg);
+          .container_inner_box {
+            padding-top: get-vw(80px, 1440);
+            padding-right: get-vw(80px, 1440);
+            .container_inner_box_title {
+              font-family: var(--font-alt);
 
-        .content__container_items_wrapper {
-          width: get-vw(780px, 1440);
-          padding: get-vw(80px, 1440) 0;
-          .content__container_items_box:first-child {
-            margin-bottom: get-vw(50px, 1440);
+              font-weight: 600;
+              font-size: get-vw(13px, 1440);
+              line-height: 1.2;
+              color: #6c2af5;
+              margin-bottom: get-vw(20px, 1440);
+            }
+            .container_inner_box_text {
+              font-family: var(--font-alt);
+
+              font-weight: 600;
+              font-size: get-vw(30px, 1440);
+              line-height: 1.4;
+              color: #6c2af5;
+              // margin-bottom: get-vw(20px, 1440);
+              width: get-vw(431px, 1440);
+
+              // overflow: hidden;
+              // background: linear-gradient(90deg, #000, #fff, #000);
+              // background-repeat: no-repeat;
+              // background-size: 80%;
+              // animation: animate 3s linear infinite;
+              // -webkit-background-clip: text;
+              // -webkit-text-fill-color: rgba(255, 255, 255, 0);
+            }
+            // @keyframes animate {
+            //     0% {
+            //       background-position: -500%;
+            //     }
+            //     100% {
+            //       background-position: 500%;
+            //     }
+            //   }
           }
-          .container_items_box_title {
-            font-family: var(--font-alt);
-            font-weight: 600;
-            font-size: get-vw(20px, 1440);
-            line-height: 1.2;
+          .container_inner_box2 {
+            padding-top: get-vw(80px, 1440);
+            .container_inner_box2_title {
+              font-family: var(--font-alt);
 
-            color: #3a3a3a;
-            margin-bottom: get-vw(10px, 1440);
-          }
-          .container_items_box_subtitle {
-            font-family: var(--font-alt);
-            font-weight: 400;
-            font-size: get-vw(13px, 1440);
-            line-height: 1.2;
+              font-weight: 600;
+              font-size: get-vw(20px, 1440);
+              line-height: 1.2;
+              color: #6c2af5;
+              margin-bottom: get-vw(10px, 1440);
+            }
+            .container_inner_box2_subtitle {
+              font-family: var(--font-alt);
 
-            color: #3a3a3a;
-            margin-bottom: get-vw(30px, 1440);
-          }
-          .container_items_box_text {
-            font-family: var(--font-alt);
-            font-weight: 400;
-            font-size: get-vw(19px, 1440);
-            line-height: 1.4;
+              font-weight: 400;
+              font-size: get-vw(13px, 1440);
+              line-height: 1.2;
+              color: #6c2af5;
+              margin-bottom: get-vw(30px, 1440);
+            }
+            .container_inner_box2_text {
+              font-family: var(--font-alt);
 
-            color: #3a3a3a;
+              font-weight: 400;
+              font-size: get-vw(19px, 1440);
+              line-height: 1.4;
+              color: #6c2af5;
+              // margin-bottom: get-vw(20px, 1440);
+              width: get-vw(640px, 1440);
+              padding-bottom: get-vw(80px, 1440);
+            }
           }
         }
-      }
-      .content__container_items2 {
-        height: get-vw(1010px, 1440);
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок2-2.svg);
-        width: get-vw(938px, 1440);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        .content__container_inner2 {
+          display: flex;
+          justify-content: center;
+          width: get-vw(1260px, 1440);
+          height: get-vw(462px, 1440);
+          margin-top: get-vw(90px, 1440);
+          z-index: 1;
+          top: get-vw(50px, 1440);
+          color: #ec5c2f;
 
-        margin-bottom: get-vw(107px, 1440);
+          background-size: cover;
+          position: relative;
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок2.svg);
+          .container_inner_box {
+            .container_inner_box_title {
+              color: #ec5c2f;
+            }
+            .container_inner_box_text {
+              color: #ec5c2f;
+            }
+          }
+          .container_inner_box2 {
+            .container_inner_box2_title {
+              color: #ec5c2f;
+            }
+            .container_inner_box2_subtitle {
+              color: #ec5c2f;
+            }
+            .container_inner_box2_text {
+              color: #ec5c2f;
+            }
+          }
+        }
+        .content__container_inner3 {
+          display: flex;
+          justify-content: center;
+          width: get-vw(1260px, 1440);
+          height: get-vw(480px, 1440);
+          margin-top: get-vw(90px, 1440);
+          z-index: 1;
+          top: get-vw(50px, 1440);
 
-        background-size: cover;
-        position: relative;
-      }
-      .content__container_items3 {
-        height: get-vw(674px, 1440);
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок3-2.svg);
-        width: get-vw(938px, 1440);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+          background-size: cover;
+          position: relative;
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок3.svg);
+        }
+        .content__container_inner4 {
+          display: flex;
+          justify-content: center;
+          width: get-vw(1260px, 1440);
+          height: get-vw(434px, 1440);
+          margin-top: get-vw(90px, 1440);
+          z-index: 1;
+          top: get-vw(50px, 1440);
+          color: #ec5c2f;
 
-        margin-bottom: get-vw(107px, 1440);
+          background-size: cover;
+          position: relative;
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/subtract.svg);
+          .container_inner_box {
+            .container_inner_box_title {
+              color: #ec5c2f;
+            }
+            .container_inner_box_text {
+              color: #ec5c2f;
+            }
+          }
+          .container_inner_box2 {
+            .container_inner_box2_title {
+              color: #ec5c2f;
+            }
+            .container_inner_box2_subtitle {
+              color: #ec5c2f;
+            }
+            .container_inner_box2_text {
+              color: #ec5c2f;
+            }
+          }
+        }
+        .content__container_inner5 {
+          display: flex;
+          justify-content: center;
+          width: get-vw(1260px, 1440);
+          height: get-vw(574px, 1440);
+          margin-top: get-vw(90px, 1440);
+          z-index: 1;
+          top: get-vw(50px, 1440);
 
-        background-size: cover;
-        position: relative;
-      }
-      .content__container_items4 {
-        height: get-vw(989px, 1440);
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок4-2.svg);
-      }
-      .content__container_items5 {
-        height: get-vw(845px, 1440);
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок5-2.svg);
-      }
-      .content__container_items6 {
-        height: get-vw(990px, 1440);
-        background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок6-2.svg);
+          background-size: cover;
+          position: relative;
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок5.svg);
+          .container_inner_box2 {
+            .container_inner_box2_text {
+              width: get-vw(600px, 1440);
+              padding-right: get-vw(40px, 1440);
+            }
+          }
+        }
+        .content__container_inner6 {
+          display: flex;
+          justify-content: center;
+          width: get-vw(1260px, 1440);
+          height: get-vw(518px, 1440);
+          margin-top: get-vw(90px, 1440);
+          z-index: 1;
+          top: get-vw(50px, 1440);
+          color: #ec5c2f;
+
+          background-size: cover;
+          position: relative;
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок6.svg);
+          .container_inner_box {
+            .container_inner_box_title {
+              color: #ec5c2f;
+            }
+            .container_inner_box_text {
+              color: #ec5c2f;
+            }
+          }
+          .container_inner_box2 {
+            .container_inner_box2_title {
+              color: #ec5c2f;
+            }
+            .container_inner_box2_subtitle {
+              color: #ec5c2f;
+            }
+            .container_inner_box2_text {
+              color: #ec5c2f;
+            }
+          }
+        }
+
+        .content__container_items {
+          width: get-vw(974px, 1440);
+          height: get-vw(730px, 1440);
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          margin-bottom: get-vw(107px, 1440);
+
+          background-size: cover;
+          position: relative;
+
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок1-2.svg);
+
+          .content__container_items_wrapper {
+            width: get-vw(780px, 1440);
+            padding: get-vw(80px, 1440) 0;
+            .content__container_items_box:first-child {
+              margin-bottom: get-vw(50px, 1440);
+            }
+            .container_items_box_title {
+              font-family: var(--font-alt);
+              font-weight: 600;
+              font-size: get-vw(20px, 1440);
+              line-height: 1.2;
+
+              color: #3a3a3a;
+              margin-bottom: get-vw(10px, 1440);
+            }
+            .container_items_box_subtitle {
+              font-family: var(--font-alt);
+              font-weight: 400;
+              font-size: get-vw(13px, 1440);
+              line-height: 1.2;
+
+              color: #3a3a3a;
+              margin-bottom: get-vw(30px, 1440);
+            }
+            .container_items_box_text {
+              font-family: var(--font-alt);
+              font-weight: 400;
+              font-size: get-vw(19px, 1440);
+              line-height: 1.4;
+
+              color: #3a3a3a;
+            }
+          }
+        }
+        .content__container_items2 {
+          height: get-vw(1010px, 1440);
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок2-2.svg);
+          width: get-vw(938px, 1440);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          margin-bottom: get-vw(107px, 1440);
+
+          background-size: cover;
+          position: relative;
+        }
+        .content__container_items3 {
+          height: get-vw(674px, 1440);
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок3-2.svg);
+          width: get-vw(938px, 1440);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          margin-bottom: get-vw(107px, 1440);
+
+          background-size: cover;
+          position: relative;
+        }
+        .content__container_items4 {
+          height: get-vw(989px, 1440);
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок4-2.svg);
+        }
+        .content__container_items5 {
+          height: get-vw(845px, 1440);
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок5-2.svg);
+        }
+        .content__container_items6 {
+          height: get-vw(990px, 1440);
+          background-image: url(https://cdn.the-village.ru/the-village.ru/2022/01/31/урок6-2.svg);
+        }
       }
     }
   }
-}
 
-.content1 {
-  background-size: cover;
-  position: relative;
-  background-attachment: fixed;
-  background-image: url(https://img.the-village.ru/D-vJt42J4ssEQg_U5whYfxeH5JWp-ROsduhMGxZwWI0/q:88/plain/2022/01/31/bg1.png);
-}
-.content2 {
-  background-size: cover;
-  position: relative;
-  background-attachment: fixed;
-  background-image: url(https://img.the-village.ru/4_ErtjqRy9SX4ubRuFLEZ73pKdCXWHXmickp5WQ9pz8/q:88/plain/2022/01/31/bg2.png);
-}
-.content3 {
-  background-size: cover;
-  position: relative;
-  background-attachment: fixed;
-  background-image: url(https://img.the-village.ru/t3iS4RXXhZg3K6p9NycunxvdcrIr1FYgMNm1oUsz1wg/q:88/plain/2022/01/31/bg3.png);
-}
-.content4 {
-  background-size: cover;
-  position: relative;
-  background-attachment: fixed;
-  background-image: url(https://img.the-village.ru/_moJlfzaeSSfA7p2FxsFEAUz6-VagpJxKBlAu1UpOQM/q:88/plain/2022/01/31/bg4.png);
-}
-.content5 {
-  background-size: cover;
-  position: relative;
-  background-attachment: fixed;
-  background-image: url(https://img.the-village.ru/P1A0D_5P1GNPGzZAMYAz5jOvDdhb4Y0nuRHLHHAmVus/q:88/plain/2022/01/31/bg5.png);
-}
-.content6 {
-  background-size: cover;
-  position: relative;
-  background-attachment: fixed;
-  background-image: url(https://img.the-village.ru/FJSZeXrhx6ZdbrghWAcEo472yQGOZTfZE_8tTh94wZQ/q:88/plain/2022/01/31/bg6.png);
+  // .content1 {
+  //   background-size: cover;
+  //   position: relative;
+  //   background-attachment: fixed;
+  //   background-image: url(https://img.the-village.ru/D-vJt42J4ssEQg_U5whYfxeH5JWp-ROsduhMGxZwWI0/q:88/plain/2022/01/31/bg1.png);
+  // }
+  // .content2 {
+  //   background-size: cover;
+  //   position: relative;
+  //   background-attachment: fixed;
+  //   background-image: url(https://img.the-village.ru/4_ErtjqRy9SX4ubRuFLEZ73pKdCXWHXmickp5WQ9pz8/q:88/plain/2022/01/31/bg2.png);
+  // }
+  // .content3 {
+  //   background-size: cover;
+  //   position: relative;
+  //   background-attachment: fixed;
+  //   background-image: url(https://img.the-village.ru/t3iS4RXXhZg3K6p9NycunxvdcrIr1FYgMNm1oUsz1wg/q:88/plain/2022/01/31/bg3.png);
+  // }
+  // .content4 {
+  //   background-size: cover;
+  //   position: relative;
+  //   background-attachment: fixed;
+  //   background-image: url(https://img.the-village.ru/_moJlfzaeSSfA7p2FxsFEAUz6-VagpJxKBlAu1UpOQM/q:88/plain/2022/01/31/bg4.png);
+  // }
+  // .content5 {
+  //   background-size: cover;
+  //   position: relative;
+  //   background-attachment: fixed;
+  //   background-image: url(https://img.the-village.ru/P1A0D_5P1GNPGzZAMYAz5jOvDdhb4Y0nuRHLHHAmVus/q:88/plain/2022/01/31/bg5.png);
+  // }
+  // .content6 {
+  //   background-size: cover;
+  //   position: relative;
+  //   background-attachment: fixed;
+  //   background-image: url(https://img.the-village.ru/FJSZeXrhx6ZdbrghWAcEo472yQGOZTfZE_8tTh94wZQ/q:88/plain/2022/01/31/bg6.png);
+  // }
 }

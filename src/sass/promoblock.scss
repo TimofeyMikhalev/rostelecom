@@ -1,3 +1,66 @@
+.moveline {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 100%;
+
+  //   overflow: hidden;
+
+  .moveline__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    animation: move 3s linear infinite;
+
+    width: auto;
+    background-color: #6c2af5;
+    color: #3a3a3a;
+
+    .container__item {
+      width: auto;
+      font-family: var(--font-alt);
+
+      font-weight: 500;
+      font-size: get-vw(20px, 1440);
+      line-height: get-vw(40px, 1440);
+      color: #000;
+      white-space: nowrap;
+
+      padding: get-vw(10px, 1440) 0;
+
+      span {
+        margin-left: get-vw(20px, 1440);
+      }
+    }
+    .container__item:not(:last-child) {
+      margin-right: get-vw(25px, 1440);
+    }
+  }
+  .moveline_orange {
+    background-color: #ec5c2f;
+  }
+}
+
+.moveline_reverse {
+  .moveline__container {
+    animation: move 3s linear infinite reverse;
+  }
+}
+@keyframes move {
+  0% {
+    transform: translate(-10%, 0);
+    transform: translate(-9.1%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+
 .promoblock {
   background-color: #6c2af5;
   display: flex;
@@ -6,10 +69,25 @@
   flex-direction: column;
   width: 100%;
   height: auto;
-
+  // width: get-vw(1440px, 1440);
   background-size: cover;
   background-attachment: fixed;
-  background-image: url(https://img.the-village.ru/4RAly1kk0Yn83zqr0B9e52NHONfCFdPJRB7-NbeHSRg/q:88/plain/2022/01/31/bg7.png);
+  position: relative;
+  z-index: 3;
+  // background-image: url(https://img.the-village.ru/4RAly1kk0Yn83zqr0B9e52NHONfCFdPJRB7-NbeHSRg/q:88/plain/2022/01/31/bg7.png);
+  .promoblock__img {
+    position: absolute;
+    z-index: -1;
+    background-attachment: fixed;
+
+    width: 100%;
+    height: 100%;
+    // width: get-vw(1440px, 1440);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
   .promoblock__container {
     width: get-vw(955px, 1440);
     display: flex;

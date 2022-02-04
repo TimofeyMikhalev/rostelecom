@@ -101,7 +101,7 @@
   [data-ui-id='post'] .villageSpecial__container .interactiveItem {
     will-change: opacity, transform;
     transition: 0.3s opacity, 0.2s transform;
-
+    background-color: #3a3a3a;
     cursor: pointer;
     &:hover {
       opacity: 0.7;
@@ -115,6 +115,9 @@
   }
   .screens-Article-ArticleContent-_-FeatureCover--FeatureCover__pageTitleBold {
     font-weight: 500;
+  }
+  .screens-Article-ArticleContent-_-Feature--Feature__articleBodyFirst {
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 850px) {
